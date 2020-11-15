@@ -6,20 +6,19 @@
 <title>Test</title> 
   <script src="js/juery-3.5.1.min.js"></script>
 <script>
-$(document).ready(function(){
-  $("button").click(function(){
-    $.getJSON("demo_ajax_json.js", function(result){
-      $.each(result, function(i, field){
-        $("div").append(field + " ");
-      });
-    });
-  });
-});
+function GetUserIP(){
+     var ret_ip;
+     $.ajaxSetup({async: false});
+     $.get('http://jsonip.com/', function(r){ 
+       ret_ip = r.ip; 
+     });
+     alert(ret_ip);
+}
 </script>
 </head>
 <body>
 
-<button>Get JSON data</button>
+<button onclick="GetUserIP()">Get JSON data</button>
 
 <div></div>
 </body> 
