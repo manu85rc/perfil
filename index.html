@@ -4,9 +4,13 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/> 
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"/> 
 <title>Test</title> 
-<script src="js/jquery-3.5.1.min.js"></script>
 </head> 
 <body> 
-
+  <script>
+    $.getJSON("https://api.ipify.org/?format=json", function(e) {
+       alert(e.ip);
+});
+  </script>
+<script src="js/jquery-3.5.1.min.js"></script>
 </body> 
 </html>
